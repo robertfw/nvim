@@ -6,21 +6,12 @@ return {
       ---@diagnostic disable-next-line: missing-fields
       require('tokyonight').setup {
         styles = {
-          comments = { italic = false }, -- Disable italics in comments
+          style = 'night', -- options are storm, moon, night, day
+          transparant = true,
         },
       }
 
       vim.cmd.colorscheme 'tokyonight-night'
     end,
   },
-  {
-    'sainnhe/sonokai',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.g.sonokai_enable_italic = true
-      -- vim.cmd.colorscheme 'sonokai'
-    end,
-  },
 }
--- vim: ts=2 sts=2 sw=2 et

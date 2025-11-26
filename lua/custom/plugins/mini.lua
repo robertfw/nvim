@@ -1,6 +1,6 @@
 return {
   { -- Collection of various small independent plugins/modules
-    'echasnovski/mini.nvim',
+    'nvim-mini/mini.nvim',
     config = function()
       -- Better Around/Inside textobjects
       --
@@ -20,7 +20,7 @@ return {
       require('mini.bracketed').setup()
       require('mini.comment').setup()
       require('mini.pairs').setup()
-      require('mini.tabline').setup()
+      -- require('mini.tabline').setup()
 
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,
