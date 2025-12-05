@@ -157,7 +157,8 @@ return {
         --
         -- ts_ls = {},
         ruff = {},
-        ty = {},
+        ty = {
+        },
         -- basedpyright = {},
         lua_ls = {
           settings = {
@@ -208,3 +209,23 @@ return {
   },
 }
 -- vim: ts=2 sts=2 sw=2 et
+--
+--[tool.ty.rules]
+-- # for those using Ty as an LSP - our codebase needs some TLC when it comes to type checking
+-- # there is no way to just blanket ignore all warnings for now, so we need to ignore each
+-- call-non-callable = "ignore"
+-- invalid-argument-type = "ignore"
+-- invalid-assignment = "ignore"
+-- invalid-method-override = "ignore"
+-- invalid-return-type = "ignore"
+-- missing-argument = "ignore"
+-- no-matching-overload = "ignore"
+-- non-subscriptable = "ignore"
+-- not-iterable = "ignore"
+-- too-many-positional-arguments = "ignore"
+-- possibly-missing-attribute = "ignore"
+-- possibly-missing-import = "ignore"
+-- unresolved-attribute = "ignore"
+-- unresolved-import = "ignore"
+-- unsupported-operator = "ignore"
+

@@ -20,6 +20,8 @@ return {
       require('mini.bracketed').setup()
       require('mini.comment').setup()
       require('mini.pairs').setup()
+      require('mini.bufremove').setup()
+
       -- require('mini.tabline').setup()
 
       -- Simple and easy statusline.
@@ -37,9 +39,6 @@ return {
         return '%2l:%-2v'
       end
 
-      -- ... and there is more!
-      --  Check out: https://github.com/echasnovski/mini.nvim
     end,
   },
 }
--- vim: ts=2 sts=2 sw=2 et
