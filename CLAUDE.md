@@ -30,6 +30,10 @@ Each plugin is defined in `lua/plugins/*.lua` and returns a lazy.nvim plugin spe
 - **Formatting**: `conform.lua` handles code formatting (stylua for Lua, ruff for Python)
 - **Mini.nvim**: `mini.lua` provides many small utilities (surround, comment, bufremove, statusline, etc.)
 
+### Plugin Source Code and Documentation Access
+
+The actual plugin source code is installed in `/home/robertfw/.local/share/nvim/lazy/`. Claude Code can access these files directly when you need to reference plugin documentation, implementation details, check API usage, or debug plugin behavior. 
+
 ## Custom Keybinding Patterns
 
 ### Helper Functions in keymaps.lua
