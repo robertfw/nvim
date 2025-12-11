@@ -43,6 +43,21 @@ leader('fh', '<Cmd>lua require("telescope.builtin").find_files({hidden = true})<
 -- Buffers
 leader('<tab>', '<Cmd>b#<CR>', 'Last buffer')
 leader('bd', '<Cmd>lua MiniBufremove.delete()<CR>', 'Delete')
+leader('bo', function()
+  local current = vim.api.nvim_get_current_buf()
+  for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+    if vim.api.nvim_buf_is_valid(buf) and vim.bo[buf].buflisted and buf ~= current then
+      MiniBufremove.delete(buf)
+    end
+  end
+end, 'Delete all other buffers')
+leader('bD', function()
+  for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+    if vim.api.nvim_buf_is_valid(buf) and vim.bo[buf].buflisted then
+      MiniBufremove.delete(buf)
+    end
+  end
+end, 'Delete all buffers')
 
 -- Windows
 leader('wH', '<C-w>H', 'Move left')

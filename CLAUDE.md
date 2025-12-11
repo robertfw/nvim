@@ -46,13 +46,15 @@ The file defines `norm()` and `leader()` helper functions to simplify keymap def
 
 ### Leader Key Structure
 
-All `<leader>` keymaps are organized by prefix:
-- `<leader>f*` - File operations (fs=save, ff=find, fh=find hidden)
-- `<leader>b*` - Buffer operations (bd=delete, <tab>=last buffer)
-- `<leader>w*` - Window operations (ws=split, wv=vsplit, wH/J/K/L=move window)
-- `<leader>s*` - Search operations (sg=grep, sw=word, sd=diagnostics) [defined in telescope.lua]
-- `<leader>t*` - Toggle operations (th=inlay hints) [defined in lspconfig.lua]
-- `<leader>u*` - Utilities (ux=execute+copy, uu=insert UUID)
+ `<leader>` keymaps are organized by prefix:
+- `<leader>f*` - File operations [defined in keymaps.lua]
+- `<leader>b*` - Buffer operations [defined in keymaps.lua]
+- `<leader>d*` - Debug operations [defined in debug.lua]
+- `<leader>w*` - Window operations [defined in keymaps.lua]
+- `<leader>s*` - Search operations [defined in telescope.lua]
+- `<leader>t*` - Toggle operations [defined in lspconfig.lua and gitsigns.lua]
+- `<leader>u*` - Utilities [defined in keymaps.lua]
+- `<leader>gh*` - Git hunk operations [defined in gitsigns.lua]
 
 ### Insert Mode Shortcuts
 
