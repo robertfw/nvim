@@ -32,7 +32,9 @@ Each plugin is defined in `lua/plugins/*.lua` and returns a lazy.nvim plugin spe
 
 ### Plugin Source Code and Documentation Access
 
-The actual plugin source code is installed in `/home/robertfw/.local/share/nvim/lazy/`. Claude Code can access these files directly when you need to reference plugin documentation, implementation details, check API usage, or debug plugin behavior. 
+The actual plugin source code is installed in `/home/robertfw/.local/share/nvim/lazy/`. Claude Code can access these files directly when you need to reference plugin documentation, implementation details, check API usage, or debug plugin behavior.
+
+Neovim's built-in documentation (all `:help` files) is located at `/snap/nvim/current/usr/share/nvim/runtime/doc/`. Reference these when you need to check Neovim API details, configuration options, or built-in functionality. 
 
 ## Custom Keybinding Patterns
 
