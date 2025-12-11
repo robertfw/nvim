@@ -39,6 +39,12 @@ return {
         return '%2l:%-2v'
       end
 
+      -- Hide git branch from statusline
+      ---@diagnostic disable-next-line: duplicate-set-field
+      statusline.section_git = function()
+        return ''
+      end
+
     end,
   },
 }
