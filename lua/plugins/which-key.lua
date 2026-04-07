@@ -47,6 +47,8 @@ return {
       spec = {
         { '<leader>b', group = '[B]uffer' },
         { '<leader>d', group = '[D]ebug' },
+        { '<leader>g', group = '[G]it' },
+        { '<leader>gd', group = '[Diff]' },
         { '<leader>s', group = '[S]earch' },
         { '<leader>t', group = '[T]oggle' },
       },

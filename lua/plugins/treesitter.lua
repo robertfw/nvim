@@ -13,7 +13,17 @@ return {
       },
       indent = { enable = true },
     },
-    { 'nvim-treesitter/nvim-treesitter-context' },
+    {
+      'nvim-treesitter/nvim-treesitter-context',
+      opts = {
+        -- Disable for markdown: treesitter-context crashes with 'range' (a nil value)
+        -- when traversing injected language trees in markdown code blocks.
+        -- See: https://github.com/nvim-treesitter/nvim-treesitter-context/issues
+        on_attach = function(buf)
+          return vim.bo[buf].filetype ~= 'markdown'
+        end,
+      },
+    },
     { 'nvim-treesitter/nvim-treesitter-textobjects' },
     -- There are additional nvim-treesitter modules that you can use to interact
     -- with nvim-treesitter. You should go explore a few and see what interests you:

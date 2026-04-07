@@ -5,7 +5,7 @@
 
 -- line numbering
 vim.o.number = true
-vim.o.relativenumber = true
+vim.o.relativenumber = false
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = 'a'
@@ -81,6 +81,6 @@ vim.o.expandtab = true
 vim.o.confirm = true
 
 -- recommended setting from auto-session
-vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal'
 
 -- vim: ts=2 sts=2 sw=2 et

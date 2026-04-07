@@ -31,6 +31,9 @@ norm('<C-j>', '<C-w><C-j>', 'Focus down')
 norm('<C-k>', '<C-w><C-k>', 'Focus up')
 norm('<C-l>', '<C-w><C-l>', 'Focus right')
 
+-- NeoTree
+norm('\\', '<Cmd>Neotree reveal<CR>', 'Neotree reveal')
+
 -- [ Anything under <leader> ]
 
 leader('q', vim.diagnostic.setloclist, 'Quickfix')
@@ -58,6 +61,9 @@ leader('bD', function()
     end
   end
 end, 'Delete all buffers')
+
+-- Git / Diff
+leader('gdm', '<Cmd>:DiffviewOpen main<CR>', 'main')
 
 -- Windows
 leader('wH', '<C-w>H', 'Move left')
