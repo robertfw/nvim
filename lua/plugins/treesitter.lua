@@ -1,35 +1,16 @@
+-- Neovim 0.12+ has built-in treesitter support (highlighting, indent, parser management).
+-- The nvim-treesitter plugin was archived April 2026 and is no longer needed.
+-- Install parsers with the built-in :TSInstall command.
+
 return {
-  { -- Highlight, edit, and navigate code
-    'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate',
-    main = 'nvim-treesitter.configs', -- Sets main module to use for opts
-    -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
+  {
+    'nvim-treesitter/nvim-treesitter-context',
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
-      -- Autoinstall languages that are not installed
-      auto_install = true,
-      highlight = {
-        enable = true,
-      },
-      indent = { enable = true },
+      -- Disable for markdown: treesitter-context crashes with 'range' (a nil value)
+      -- when traversing injected language trees in markdown code blocks.
+      on_attach = function(buf)
+        return vim.bo[buf].filetype ~= 'markdown'
+      end,
     },
-    {
-      'nvim-treesitter/nvim-treesitter-context',
-      opts = {
-        -- Disable for markdown: treesitter-context crashes with 'range' (a nil value)
-        -- when traversing injected language trees in markdown code blocks.
-        -- See: https://github.com/nvim-treesitter/nvim-treesitter-context/issues
-        on_attach = function(buf)
-          return vim.bo[buf].filetype ~= 'markdown'
-        end,
-      },
-    },
-    { 'nvim-treesitter/nvim-treesitter-textobjects' },
-    -- There are additional nvim-treesitter modules that you can use to interact
-    -- with nvim-treesitter. You should go explore a few and see what interests you:
-    --
-    --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
-    --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
-    --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
   },
 }
